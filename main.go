@@ -32,13 +32,13 @@ func main() {
 	}
 
 	for k, v := range byteStory {
-		arc := storyArc{}
-		err := json.Unmarshal(v, &arc)
+		arc := new(storyArc)
+		err := json.Unmarshal(v, arc)
 		if err != nil {
 			fmt.Println(err)
 			break
 		}
-		parsedStory[k] = arc
+		parsedStory[k] = *arc
 	}
 
 	for k, v := range parsedStory {
