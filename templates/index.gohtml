@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story World</title>
+</head>
+<body>
+  <h1>{{.Title}}</h1>
+  {{range $c := .Story}}
+  <p>{{$c}}</p>
+  {{end}}
+  {{range $o := .Options }}
+  <h3><a href="{{$o.Arc}}">{{$o.Text}}</a></h3>
+  {{end}}
+</body>
+</html>
